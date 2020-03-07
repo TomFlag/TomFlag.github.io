@@ -19,7 +19,8 @@ a {
 
 .top-wrapper {
   padding: 180px 0 100px 0;
-  background-image: url(top.png);
+  /* background-image: url(top.png); */
+  background-color: #3b5998;
   background-size: cover;
   color: white;
   text-align: center;
@@ -87,6 +88,8 @@ header {
 .logo {
   width: 124px;
   margin-top: 20px;
+  font-size: 20px;
+  color: #eee;
 }
 
 .header-left {
@@ -132,7 +135,7 @@ header {
 
 .lesson {
   float: left;
-  width: 25%;
+  width: 33.33333%;
 }
 
 .lesson-icon {
@@ -143,7 +146,7 @@ header {
   position: absolute;
   top: 37%;
   width: 100%;
-  color: white;
+  /* color: white; */
 }
 
 .text-contents {
