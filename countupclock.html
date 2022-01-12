@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>カウントアップタイマー</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <script>
+        var interval;
+        window.onload = function () {
+            var stop = document.getElementById("stop");
+            stop.addEventListener("click", count_stop, false);
+            var start = document.getElementById('start');
+            start.addEventListener('click', count_start, false);
+            interval = setInterval(clock, 1);
+            start_f = true;
+        }
+
+        function clock() {
+            const jstNow = new Date(Date.now() + ((new Date().getTimezoneOffset() + (9 * 60)) * 60 * 1000));
+            const zero = '0';
+            let h_full = 23;
+            let m_full = 59;
+            let ms_full = 999;
+            for (let index = 2; index <= 36; index++) {
+                const h_digit = h_full.toString(index).length;
+                const m_digit = m_full.toString(index).length;
+                const ms_digit = ms_full.toString(index).length;
+                const hour = jstNow.getHours().toString(index);
+                const min = jstNow.getMinutes().toString(index);
+                const sec = jstNow.getSeconds().toString(index);
+                const msec = jstNow.getMilliseconds().toString(index);
+                const zhour = (zero.repeat(h_digit) + hour).slice(-1 * h_digit);
+                const zmin = (zero.repeat(m_digit) + min).slice(-1 * m_digit);
+                const zsec = (zero.repeat(m_digit) + sec).slice(-1 * m_digit);
+                const zmsec = (zero.repeat(ms_digit) + msec).slice(-1 * ms_digit);
+                var count_up = document.getElementById("default" + index);
+                count_up.innerHTML = zhour + ":" + zmin + ":" + zsec + "." + zmsec;
+            }
+            // var decimal = document.getElementById("decimal");
+            // decimal.innerHTML = ('00000' + jstNow.getHours()).slice(-5) + ":" + ('000000' + jstNow.getMinutes()).slice(-6) + ":" + ('000000' + jstNow.getSeconds()).slice(-6) + "." + ('0000000000' + jstNow.getMilliseconds()).slice(-10);
+        }
+        function count_stop() {
+            clearInterval(interval);
+            start_f = false;
+        }
+        function count_start() {
+            if (start_f === false) {
+                interval = setInterval(clock, 1);
+                start_f = true;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <div class="button_con">
+        <button id="start" class="button">スタート</button>
+        <button id="stop" class="button">ストップ</button>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            2進数
+        </div>
+        <div id="default2" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            3進数
+        </div>
+        <div id="default3" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            4進数
+        </div>
+        <div id="default4" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            5進数
+        </div>
+        <div id="default5" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            6進数
+        </div>
+        <div id="default6" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            7進数
+        </div>
+        <div id="default7" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            8進数
+        </div>
+        <div id="default8" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            9進数
+        </div>
+        <div id="default9" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            10進数
+        </div>
+        <div id="default10" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            11進数
+        </div>
+        <div id="default11" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            12進数
+        </div>
+        <div id="default12" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            13進数
+        </div>
+        <div id="default13" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            14進数
+        </div>
+        <div id="default14" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            15進数
+        </div>
+        <div id="default15" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            16進数
+        </div>
+        <div id="default16" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            17進数
+        </div>
+        <div id="default17" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            18進数
+        </div>
+        <div id="default18" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            19進数
+        </div>
+        <div id="default19" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            20進数
+        </div>
+        <div id="default20" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            21進数
+        </div>
+        <div id="default21" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            22進数
+        </div>
+        <div id="default22" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            23進数
+        </div>
+        <div id="default23" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            24進数
+        </div>
+        <div id="default24" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            25進数
+        </div>
+        <div id="default25" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            26進数
+        </div>
+        <div id="default26" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            27進数
+        </div>
+        <div id="default27" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            28進数
+        </div>
+        <div id="default28" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            29進数
+        </div>
+        <div id="default29" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            30進数
+        </div>
+        <div id="default30" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            31進数
+        </div>
+        <div id="default31" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            32進数
+        </div>
+        <div id="default32" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            33進数
+        </div>
+        <div id="default33" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            34進数
+        </div>
+        <div id="default34" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            35進数
+        </div>
+        <div id="default35" class="clock"></div>
+    </div>
+
+    <div class="con">
+        <div class="base_number">
+            36進数
+        </div>
+        <div id="default36" class="clock"></div>
+    </div>
+</body>
+
+</html>
